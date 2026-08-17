@@ -1,0 +1,41 @@
+name = "myecommerce-admin"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+
+# ============================================================
+# D1 - Base de datos principal (multi-tenant)
+# ============================================================
+[[d1_databases]]
+binding = "DB"
+database_name = "myecommerce-admin-db"
+database_id = "7b6a5074-3891-4c08-b7f1-cdcea635917d"
+
+# ============================================================
+# KV - Sesiones y caché
+# ============================================================
+[[kv_namespaces]]
+binding = "KV"
+id = "b9835d384b0947e4b6511bf5643c54e2"
+
+# ============================================================
+# R2 - Media (pendiente activación en dashboard)
+# ============================================================
+# [[r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "myecommerce-admin-media"
+
+# ============================================================
+# Static Assets - Admin UI
+# ============================================================
+[site]
+bucket = "public"
+
+# ============================================================
+# Development (local)
+# ============================================================
+# [env.dev]
+# name = "myecommerce-admin-dev"

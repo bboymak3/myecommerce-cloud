@@ -1,0 +1,21 @@
+{
+  "name": "myecommerce-admin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 execute myecommerce-admin-db --local --file=./migrations/001_schema.sql",
+    "db:migrate:remote": "wrangler d1 execute myecommerce-admin-db --remote --file=./migrations/001_schema.sql",
+    "db:seed": "wrangler d1 execute myecommerce-admin-db --local --file=./migrations/002_seed.sql",
+    "db:seed:remote": "wrangler d1 execute myecommerce-admin-db --remote --file=./migrations/002_seed.sql"
+  },
+  "dependencies": {
+    "hono": "^4.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241230.0",
+    "wrangler": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}
